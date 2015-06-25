@@ -6,8 +6,8 @@
   "scripts": {
     "test": "mocha --reporter spec"
   },
-  "author": "",
-  "license": "MIT",
+  "author": "Anthony Barnes",
+  "license": "ISC",
   "dependencies": {
     "bluebird": "^2.9.30",
     "gaze": "^0.5.1",
