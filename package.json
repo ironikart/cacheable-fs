@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^2.9.30",
-    "gaze": "^0.5.1",
     "graceful-fs": "^3.0.8",
     "mkdirp": "^0.5.1",
     "resumer": "0.0.0"

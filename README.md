@@ -1,6 +1,6 @@
 # Cacheable FS
 
-Cacheable file system methods for holding file reads in memory and optionally automatically expiring them with a file system watcher (using [Gaze](https://github.com/shama/gaze)).
+Cacheable file system methods for holding file reads in memory
 
 ## Usage
 
@@ -40,4 +40,3 @@ All of the following methods will return a promise
 ## Properties
 
 * `fs` - Exposing [graceful-fs](https://github.com/isaacs/node-graceful-fs)
-* `watcher` - Exposing [Gaze](https://github.com/shama/gaze)

@@ -74,36 +74,4 @@ describe('cache fs', function() {
             done();
         });
     });
-
-    it('can watch the file system for changes and expire cache', function(done) {
-        var filename = 'fileB.txt';
-        var src = path.join(fixtures, filename);
-        var target = path.join(tmpDir, filename);
-        this.fs.cache.copy(src, target).then(function() {
-            expect(fs.statSync(target).isFile()).to.be.equal(true);
-            return this.fs.cache.readFile(target);
-        }.bind(this)).then(function() {
-            expect(this.fs.cache.getCache()).to.have.any.key(target);
-
-            // Start the watcher and pass a callback
-            this.fs.watch(function(evt, file) {
-                if (evt === 'changed' && file === target) {
-                    var newCache = this.fs.cache.getCache();
-                    expect(newCache).not.to.have.any.key(target);
-                    done();
-                }
-            }.bind(this));
-
-            var watched = this.fs.watcher.watched();
-            var watchedDir = path.dirname(target)+'/';
-
-            // has it been watched properly?
-            expect(watched).to.have.any.key(watchedDir);
-            expect(watched[watchedDir]).to.have.length(1);
-            expect(watched[watchedDir][0]).to.equal(target);
-
-            // Modify it to test cache expiry
-            fs.writeFileSync(target, 'Modified File B');
-        }.bind(this));
-    });
 });
