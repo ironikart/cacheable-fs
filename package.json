@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha --reporter spec"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ironikart/cacheable-fs.git"
+  },
   "author": "Anthony Barnes",
   "license": "ISC",
   "dependencies": {
