@@ -17,7 +17,8 @@
     "graceful-fs": "^3.0.8",
     "memory-cache": "^0.1.4",
     "mkdirp": "^0.5.1",
-    "resumer": "0.0.0"
+    "resumer": "0.0.0",
+    "through2": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",

@@ -34,11 +34,13 @@ describe('cache fs', function() {
         var src = path.join(fixtures, 'fileB.txt');
         this.fs.createReadStream(src)
             .pipe(map(function (content, cb) {
-                content.should.equal('File B');
-                expect(cache.keys()).to.contain(src);
+                content.toString().should.equal('File B');
                 cb(null, content);
             }))
-            .on('end', done);
+            .on('end', function() {
+                expect(cache.keys()).to.contain(src);
+                done();
+            });
     });
 
     it('can expire cache', function(done) {
