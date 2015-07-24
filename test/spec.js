@@ -77,4 +77,25 @@ describe('cache fs', function() {
             done();
         });
     });
+
+    it('tracks stats related to cache hits and misses', function(done) {
+        expect(this.fs.stats().hits).not.to.equal(0);
+        expect(this.fs.stats().misses).not.to.equal(0);
+        this.fs.resetStats();
+        expect(this.fs.stats().hits).to.equal(0);
+        expect(this.fs.stats().misses).to.equal(0);
+        var src = path.join(fixtures, 'fileA.txt');
+        this.fs.expire(src);
+        this.fs.readFile(src).then(function(content) {
+            content.should.equal('File A');
+            expect(cache.keys()).to.contain(src);
+            expect(this.fs.stats().hits).to.equal(0);
+            expect(this.fs.stats().misses).to.equal(1);
+            this.fs.readFile(src).then(function() {
+                expect(this.fs.stats().hits).to.equal(1);
+                expect(this.fs.stats().misses).to.equal(1);
+                done();
+            }.bind(this));
+        }.bind(this));
+    });
 });
