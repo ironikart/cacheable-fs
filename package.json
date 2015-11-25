@@ -1,6 +1,6 @@
 {
   "name": "cacheable-fs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cacheable file system",
   "main": "lib/fs.js",
   "scripts": {
