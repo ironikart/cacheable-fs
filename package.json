@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^2.9.30",
-    "graceful-fs": "^3.0.8",
+    "graceful-fs": "^4.x",
     "memory-cache": "^0.1.4",
     "mkdirp": "^0.5.1",
     "string-stream": "0.0.7",
