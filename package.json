@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ironikart/cacheable-fs.git"
+    "url": "git+ssh://git@github.com/ironikart/cacheable-fs.git"
   },
   "author": "Anthony Barnes",
   "license": "ISC",
@@ -25,5 +25,13 @@
     "map-stream": "0.0.7",
     "mocha": "^5.0.5",
     "rimraf": "^2.6.2"
+  },
+  "bugs": {
+    "url": "https://github.com/ironikart/cacheable-fs/issues"
+  },
+  "homepage": "https://github.com/ironikart/cacheable-fs#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   }
 }
